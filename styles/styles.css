@@ -1,0 +1,239 @@
+html{
+    overflow: hidden;
+}
+
+.Logo1{
+    background-color: #7499F2;
+    width: 80px;
+    padding-right: 10px;
+    transform: translateY(-6px)
+}
+
+.header{
+    background-color: #7499F2;
+    width: 100%;
+    display: flex;
+    border-bottom: solid white 1px;
+    color: white;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+button{
+    border: hidden;
+    margin: 5px;
+    padding: 0px 15px 2px 15px;
+}
+
+#info{
+    background-color: #7957F2;
+    color: white;
+    position: fixed;
+    top: 28px; /* Ajusta la distancia desde la parte superior */
+    right: 540px;
+    font-size: x-large;
+    border-radius: 15px;
+}
+
+#membership{
+    background-color: #7957F2;
+    color: white;
+    position: fixed;
+    top: 28px; /* Ajusta la distancia desde la parte superior */
+    right: 370px;
+    font-size: x-large;
+    border-radius: 15px;
+}
+
+#team{
+    background-color: #7957F2;
+    color: white;
+    position: fixed;
+    top: 28px; /* Ajusta la distancia desde la parte superior */
+    right: 150px;
+    font-size: x-large;
+    border-radius: 15px;
+}
+
+.user{
+    width: 70px;
+    position: fixed;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 30px;
+}
+
+.Logo2{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.Title11{
+    position: fixed;
+    top: 140px;
+    left: 120px;
+    width: 20%;
+}
+
+.Title21{
+    position: fixed;
+    top: 140px;
+    right: 188px;
+    width: 20%;
+}
+
+.Title1{
+    position: fixed;
+    color: white;
+    width: 28%;
+    top: 220px;
+    left: 120px;
+    font-size: larger;
+}
+
+.Title2{
+    position: fixed;
+    color: white;
+    width: 22%;
+    top: 220px;
+    right: 150px;
+    font-size: larger;
+}
+
+.button2{
+    background-color: #5DDCE5;
+    color: black;
+    font-size: larger;
+    border-radius: 15px;
+}
+
+#inicioSesion{
+    position: absolute;
+    bottom: -30px;
+}
+
+#descarga{
+    position: absolute;
+    bottom: -30px;
+    margin-left: 200px;
+}
+
+.propuestas{
+    border-top: solid white 1px;
+    position: static;
+    background-color: #7957F2;
+    height: 100vh;
+}
+
+.cuadrado {
+    width: 65px; /* Establece el ancho deseado */
+    height: 65px; /* Establece la altura deseada (mismo valor que el ancho para un cuadrado) */
+    background-color: #5DDCE5; /* Cambia a tu color de fondo preferido */
+    content: '';
+    border-radius: 20%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+.c1{
+    position: fixed;
+    left: 20%;
+}
+
+.c2{
+    position: fixed;
+    left: 40%;
+}
+
+.c3{
+    position: fixed;
+    left: 60%;
+}
+
+.c4{
+    position: fixed;
+    left: 80%;
+}
+
+.texto {
+    text-align: center;
+    overflow: visible;
+    width: 250px;
+}
+
+#t1{
+    position: absolute;
+    bottom: -50%;
+    left: -90px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#t2{
+    position: absolute;
+    bottom: -50%;
+    left: -90px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#t3{
+    position: absolute;
+    bottom: -50%;
+    left: -90px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#t4{
+    position: absolute;
+    bottom: -30%;
+    left: -90px;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align:  center;
+    font-size: small;
+}
+
+#t11{
+    position: absolute;
+    bottom: -225%;
+    left: -65px;
+    width: 200px;
+    text-align: center;
+}
+
+#t12{
+    position: absolute;
+    bottom: -205%;
+    left: -65px;
+    width: 200px;
+    text-align: center;
+}
+#t13{
+    position: absolute;
+    bottom: -165%;
+    left: -65px;
+    width: 200px;
+    text-align: center;
+}
+#t14{
+    position: absolute;
+    bottom: -180%;
+    left: -65px;
+    width: 200px;
+    text-align: center;
+}
+
+p{
+    color: white;
+}
