@@ -1,0 +1,78 @@
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: left;
+}
+
+p{
+    font-size: 20px;
+}
+
+body {
+    background-image: url("./media/gif.gif");
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	height: 100%;
+}
+
+table {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    text-align: center;
+    border: 2px solid rgb(214, 40, 40);
+}
+
+th, td {
+    border-style: solid;
+}
+
+th.nombre1 {
+    background-color:rgb(238, 238, 27);
+    border: 2px solid rgb(214, 40, 40);
+}
+
+th.nombre2 {
+    background-color:rgb(242, 185, 27);
+    border: 2px solid rgb(214, 40, 40);
+} 
+  
+td.normal {
+    background-color: white;
+    font-weight: bolder;
+    border: 2px solid rgb(214, 40, 40);
+}
+
+td.position {
+    background-color: rgb(87, 164, 241);
+    font-weight: bolder;
+    border: 2px solid rgb(214, 40, 40)
+}
+
+td.position2 {
+    background-color: rgb(179, 175, 175);
+    font-weight: bolder;
+    border: 2px solid rgb(214, 40, 40);
+    text-align: left;
+}
+
+td.plata{
+    text-align: right;
+    background-color: white;
+    font-weight: bolder;
+    border: 2px solid rgb(214, 40, 40);
+}
+
+.videos{
+    text-align: center;
+}
+
+#Titulo{
+    color: darkred;
+}
