@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+    var ventana;
+    function OpenWindow(){
+        ventana = window.open('','','width = 100', 'height = 100');
+        ventana.focus();
+    }
+
+    function ReSizeWindow(){
+        ventana.resizeBy(40, 40);
+        ventana.focus();
+    }
+	</script>
+	</head>
+	<body>
+		<button onclick="OpenWindow()">Crear una nueva ventana</button>
+		<button onclick="ReSizeWindow()">Redimensionar ventana</button>
+
+	</body>
+</html>

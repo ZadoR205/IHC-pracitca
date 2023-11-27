@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+        <h3>Permítenos conocer tu ubicación</h3>
+        <p>Presiona el botón para obtener tus coordenadas</p>
+        <button onclick="getLocation()">Click</button>
+
+        <p id="localizacion"></p>
+        <p id="localizacion2"></p>
+        <script>
+            const x = document.getElementById("localizacion");
+            const y = document.getElementById("localizacion2");
+            function getLocation(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else{
+                    alert("Geolocalización no soportada por este navegador")
+                    x.innerHTML = "Geolocalización no soportada por este navegador. Ingrese su ubicacion manualmente";
+                }
+
+                function showPosition(position){
+                    alert("Mostrando coordenadas")
+                    x.innerHTML="Latitud: " + position.coords.latitude;
+                    y.innerHTML="Longitud: " + position.coords.longitude;
+                }
+            }
+        </script>
+    </body>
+</html>

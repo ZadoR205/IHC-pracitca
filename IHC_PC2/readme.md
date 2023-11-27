@@ -1,0 +1,4 @@
+El diseño incluye principios de diseño visual como contraste, repetición y jerarquía los cuales resaltan elementos clave con colores y estilos uniformes en toda la página web. Esta cumple con la usabilidad al ofrecer una navegación intuitiva, visual y una legibilidad del tamaño de los fonts e imagenes. 
+La arquitectura de información utilizada organiza el contenido de manera clara, priorizando información esencial y manteniendo coherencia. Se emplea un fondo animado sutil y botones estilizados para agregar dinamismo e interactividad, creando así una experiencia visualmente atractiva y funcional.
+De igual forma se hace uso de herramientas como Bootstrap para cumplir con el diseño responsivo a la hora de utilizar la página web en dispositivos móviles.
+Por otro lado, en caso que el navegador del usuario no cuente con soporte de video HTML, se le indicará al usuario que su navegador debe de contar con ello para visualizar los videos.
