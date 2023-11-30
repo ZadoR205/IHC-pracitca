@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+			position: relative;
+            display:flex;
+        }
+
+        header {
+            background-color: #8ab446;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 40px;
+            z-index: 2;
+        }
+
+        .sidebar {
+            background-color: #333;
+            width: 8%;
+            height: 100%; /* Ocupa el 100% del alto de la ventana */
+            padding-left: 10px;
+            padding-right: 10px;
+            position: fixed;
+        }
+
+        #sideContent{
+            position: relative;
+            top: 150px;
+            text-align: center;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .dashboard {
+            display: flex;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+
+
+        section {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2d6b22;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+            z-index: 2;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home, #about, #contact{
+            margin-left: 11%;
+        }
+
+        #userPhoto{
+            width: 60px;
+            position: absolute;
+            top: 20px;
+            right: 3%;
+            transition: transform 0.3s;
+        }
+
+        #userPhoto:hover{
+            cursor:pointer;
+            transform: scale(1.1);
+        }
+        
+        #Login{
+            position:absolute;
+            top: 1;
+            right: 5%;
+            background-color: #2d6b22;
+            border-color: #2d6b22;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #Login:hover, #Register:hover{
+            cursor:pointer;
+        }
+
+        #Register{
+            position:absolute;
+            top: 1;
+            right: 1%;
+            background-color: #2d6b22;
+            border-color: #2d6b22;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #profilePhoto{
+            width: 10%;
+            transition: transform 0.3s;
+        }
+
+        #profilePhoto:hover{
+            cursor:pointer;
+            transform: scale(1.1);
+        }
+
+        #reset{
+            text-decoration: underline;
+        }
+        #reset:hover{
+            cursor:pointer;
+        }
+
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            -webkit-text-stroke: 1px #000;
+            position: absolute;
+            top: 0;
+            right: 6px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            padding-top: 0;
+            border-radius: 5px;
+            position: relative;
+        }
+		#loginModal, #registerModal, #changePassModal {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            header, nav, section, footer {
+                margin: 10px;
+            }
+        }
+    </style>
+     <header>
+        <h1>Welcome to 🖐 Helia</h1>
+        <img src="../img/user.png" alt="user" id="userPhoto" onclick="showSection('user')">
+        <button onclick="showModal('loginModal')" id="Login">Login</button>
+        <button onclick="showModal('registerModal')" id="Register">Register</button>
+    </header>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <ul id ="sideContent">
+            <hr>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <hr>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <hr>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            <hr>
+        </ul>
+    </nav>
+    <section id="user" style="display: none;">
+        <h2>Gestion de usuario</h2>
+        <div><img src="../img/user.png" alt="profile" id="profilePhoto" onclick="getFile()">
+        <input type="file" id="fileInput" accept=".png, .jpg, .jpeg" style="display: none;" onchange="showSelectedPhoto()"></div>
+        <p><strong id="userName">Nombre de usuario</strong></p>
+        <input type="text" id="name" name="name" style="border: 0px; border-radius: 5px" onkeydown="checkEnter(event)">
+        <br><br>
+        <a id="reset" onclick="showModal('changePassModal')">Resetear Contraseña</a>
+    </section>
+
+    <section id="home">
+        <h2>Home Section</h2>
+        <p>This is the content of the home section.</p>
+
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>About Section</h2>
+        <p>This is the content of the about section.</p>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>Contact Section</h2>
+        <p>This is the content of the contact section.</p>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <!-- Your login form goes here -->
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br><br>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+            <!-- Your registration form goes here -->
+            <form>
+                <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" name="newUsername">
+                <br><br>
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword">
+                <br><br>
+                <button type="button" onclick="register()">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="changePassModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('changePassModal')">&times;</span>
+            <h2>Change Password</h2>
+            <!-- Your password change form goes here -->
+            <form>
+                <label for="email">Ingresa tu correo electronico</label>
+                <p>enviaremos un link para que pueda cambiar su contraseña</p>
+                <input type="email" id="email" name="email">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+        }
+
+        function login() {
+            // Add your login logic here
+            alert('Logged correctly');
+        }
+
+        function register() {
+            // Add your registration logic here
+            alert('Registration complete');
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+
+            sections.forEach(function(section) {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        function getFile(){
+            document.getElementById('fileInput').click();
+        }
+        document.getElementById('fileInput').addEventListener('change', function() {
+            // Acciones a realizar cuando se selecciona un archivo
+            var selectedFile = this.files[0];
+            if (selectedFile) {
+                alert('Archivo seleccionado: ' + selectedFile.name);
+                // Puedes realizar más acciones según tus necesidades
+            }
+        });
+
+        function showSelectedPhoto() {
+            const fileInput = document.getElementById('fileInput');
+            const profilePhoto = document.getElementById('profilePhoto');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    profilePhoto.src = e.target.result;
+                    profilePhoto.style.width = '10%';
+                    profilePhoto.style.height = '10%';
+                    profilePhoto.style.borderRadius = '50%'
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                updateUserName();
+            }
+        }
+
+        function updateUserName() {
+            var inputElement = document.getElementById("name");
+            var userNameElement = document.getElementById("userName");
+
+            userNameElement.textContent = inputElement.value;
+
+            // Limpiar el campo de entrada después de mostrar el texto (opcional)
+            inputElement.value = "";
+        }
+    </script>
+</body>
+
+</html>
