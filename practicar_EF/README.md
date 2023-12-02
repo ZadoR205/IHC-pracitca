@@ -1,15 +1,11 @@
-# Mi Documento Markdown
+# Sustentación
 
-Esto es un párrafo en **Markdown**. Puedes *formatear* el texto fácilmente.
+La pagina tiene un diseño web bien estructurado y visualmente atractivo, aplicando de manera efectiva varios principios y elementos de diseño. En términos de principios de diseño, he logrado un equilibrio visual mediante el uso de una barra de navegación fija y un área de contenido flexible. La aplicación del contraste se evidencia en la paleta de colores, donde el verde brillante del encabezado y la barra lateral contrasta con el fondo más claro, asegurando una legibilidad adecuada.
 
-## Sección 1
+El énfasis se destaca en el encabezado, que se presenta con un tamaño de fuente más grande y un distintivo color verde, captando la atención hacia el nombre del sitio web. Además, la cohesión y unidad visual se logran a través de elecciones de color consistentes, estilos de fuente uniformes y una disposición general coherente.
 
-- Elemento de lista 1
-- Elemento de lista 2
-- Elemento de lista 3
+En cuanto a los elementos de diseño, la paleta de colores se compone principalmente de tonos de verde, blanco y gris, creando una atmósfera vibrante y acogedora. La tipografía Arial se utiliza de manera consistente, brindando una apariencia limpia y moderna. El uso de líneas horizontales en el encabezado y bordes contribuye a una disposición estructurada, mientras que las formas redondeadas, implementadas mediante el atributo 'border-radius', aportan suavidad al diseño.
 
-## Sección 2
+El espacio se maneja adecuadamente, con márgenes y rellenos que mejoran la legibilidad y la apariencia general. Aunque no hay una textura literal, las elecciones visuales y estilísticas generan una sensación de profundidad y riqueza visual. Además, la respuesta a diferentes tamaños de pantalla se aborda mediante consultas de medios, asegurando un diseño receptivo.
 
-1. Elemento numerado 1
-2. Elemento numerado 2
-3. Elemento numerado 3
+En términos de diseño interactivo, la implementación de pop-ups modales proporciona una manera fluida e interactiva para que los usuarios inicien sesión, se registren y cambien sus contraseñas. Se ha considerado la accesibilidad con texto legible, suficiente contraste de colores y opciones de navegación claras. En resumen, tu diseño exhibe una comprensión sólida de los principios y elementos de diseño, siendo atractivo visualmente, funcional y amigable para el usuario, brindando una experiencia positiva al usuario.
