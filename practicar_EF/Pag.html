@@ -19,16 +19,21 @@
             min-height: 100vh;
 			position: relative;
             display:flex;
+            overflow-x: hidden;
         }
 
         header {
+            top:0;
+            left: 0;
             background-color: #8ab446;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: relative;
+            position: fixed;
             padding-bottom: 40px;
             z-index: 2;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .sidebar {
@@ -69,24 +74,43 @@
             padding: 20px;
         }
 
+    ::-webkit-scrollbar {
+         width: 12px; /* Ancho del scrollbar */
+    }
 
+        ::-webkit-scrollbar-track {
+            background-color: transparent; /* Color del track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #2d6b22; /* Color del handle */
+            border-radius: 6px; /* Bordes redondeados del handle */
+            border: 3px solid #2d6b22; /* Borde del handle */
+        }
 
         section {
             margin: 20px;
+            margin-top: 8.5%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            flex: 1;
+            max-height:72vh ;
+            min-height: 72vh;
             text-align: center;
+            overflow: auto;
         }
 
         footer {
             background-color: #2d6b22;
             color: #fff;
-            padding: 10px;
+            padding: 0px;
             text-align: center;
             margin-top: auto;
             z-index: 2;
+        }
+
+        select{
+            border-radius: 15px;
         }
 
         /* Modal styles */
@@ -104,6 +128,7 @@
 
         #home, #about, #contact{
             margin-left: 11%;
+            
         }
 
         #userPhoto{
@@ -160,6 +185,27 @@
             cursor:pointer;
         }
 
+        #hoteles{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+        }
+
+        #hotel{
+            width: 400px;
+            height: 200px;
+        }
+
+        #hotelbox{
+            margin-top: 20px;
+            border: 2px solid transparent;
+        }
+
+        #hotelbox:hover{
+            cursor: pointer;
+            border: 2px solid #444;
+        }
+
         .close {
             color: white;
             font-size: 28px;
@@ -198,7 +244,7 @@
     </style>
      <header>
         <h1>Welcome to 🖐 Helia</h1>
-        <img src="../img/user.png" alt="user" id="userPhoto" onclick="showSection('user')">
+        <img src="./img/user.png" alt="user" id="userPhoto" onclick="showSection('user')">
         <button onclick="showModal('loginModal')" id="Login">Login</button>
         <button onclick="showModal('registerModal')" id="Register">Register</button>
     </header>
@@ -218,7 +264,7 @@
     </nav>
     <section id="user" style="display: none;">
         <h2>Gestion de usuario</h2>
-        <div><img src="../img/user.png" alt="profile" id="profilePhoto" onclick="getFile()">
+        <div><img src="./img/user.png" alt="profile" id="profilePhoto" onclick="getFile()">
         <input type="file" id="fileInput" accept=".png, .jpg, .jpeg" style="display: none;" onchange="showSelectedPhoto()"></div>
         <p><strong id="userName">Nombre de usuario</strong></p>
         <input type="text" id="name" name="name" style="border: 0px; border-radius: 5px" onkeydown="checkEnter(event)">
@@ -228,7 +274,54 @@
 
     <section id="home">
         <h2>Home Section</h2>
-        <p>This is the content of the home section.</p>
+        <p>Encuentra el mejor hotel al mejor precio.</p>
+        <img src="./img/main.png" alt="hoteles">
+        <br><br><br><br>
+        <div id="buscador">
+            <p><strong>Busca tu lugar ideal</strong></p>
+            <input type="text" style="width: 50%; border-color: #333; border-width: 1px; border-radius: 8px;" placeholder="  Ej: Cuzco">
+            <select name="filtros">
+                <option value="sinFiltro">Sin filtro</option>
+                <option value="precioMayor">Precio: $$$</option>
+                <option value="precioMenor">Precio: $</option>
+                <option value="A-Z">A-Z</option>
+                <option value="Z-A">Z-A</option>
+            </select>
+            <br><br><br>
+            <div id="hoteles">
+                <div id="hotelbox">
+                    <img src="./img/hotel1.png" id="hotel">
+                    <br>
+                    <a>hotel1</a>
+                </div>
+                <div id="hotelbox">
+                    <img src="./img/hotel2.png" id="hotel">
+                    <br>
+                    <a>hotel2</a>
+                </div>
+                <div id="hotelbox">
+                    <img src="./img/hotel3.png" id="hotel">
+                    <br>
+                    <a>hotel3</a>
+                </div>
+                <div id="hotelbox">
+                    <img src="./img/hotel4.png" id="hotel">
+                    <br>
+                    <a>hotel4</a>
+                </div>
+                <div id="hotelbox">
+                    <img src="./img/hotel5.png" id="hotel">
+                    <br>
+                    <a>hotel5</a>
+                </div>
+                <div id="hotelbox">
+                    <img src="./img/hotel6.png" id="hotel">
+                    <br>
+                    <a>hotel6</a>
+                </div>
+            </div>
+
+        </div>
 
     </section>
 
